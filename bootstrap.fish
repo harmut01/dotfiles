@@ -4,7 +4,10 @@ if type -q brew
     brew update
 else
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    brew install tmux
+    brew install tmux ripgrep
+
+    # Install Python dependencies
+    curl -sSL https://install.python-poetry.org | python3 -
 end
 
 rsync --exclude ".git/" \
@@ -18,7 +21,7 @@ rsync --exclude ".git/" \
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install;
 fish install --noninteractive && rm -f install
 
-omf install bobthefish fzf 
+omf install bobthefish fzf
 omf install https://github.com/jhillyerd/plugin-git
 
 # Pre-installed macOS system Vim does not support Python 3.
