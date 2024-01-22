@@ -21,6 +21,5 @@ function jr --wraps=vi\ -Os\ journal/\(date\ --date=\'-1\ day\'\ +\%F\).md\ jour
         end
     end
 
-    echo vi ~/projects/notes/ops-work.md -c vs\ $prev_note\ \|\ sp\ $day_note $argv
     vi ~/projects/notes/ops-work.md -c vs\ $prev_note\ \|\ sp\ $day_note $argv
 end
