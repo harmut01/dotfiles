@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "${BASH_SOURCE}")";
-
 rsync --exclude ".git/" \
 	--exclude ".DS_Store" \
 	--exclude ".osx" \
@@ -10,7 +8,7 @@ rsync --exclude ".git/" \
 	--exclude "LICENSE-MIT.txt" \
 	-avh --no-perms . ~;
 
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install;
-fish install --noninteractive && rm -f install
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && \
+        fisher install jorgebucaran/fisher curl
 
-fish -C "omf install fzf https://github.com/jhillyerd/plugin-git"
+fisher install jhillyerd/plugin-git
