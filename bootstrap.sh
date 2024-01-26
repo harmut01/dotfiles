@@ -9,6 +9,6 @@ rsync --exclude ".git/" \
 	-avh --no-perms . ~;
 
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && \
-        fisher install jorgebucaran/fisher curl
+        fish -c 'fisher install jorgebucaran/fisher curl'
 
-fisher install jhillyerd/plugin-git
+fish -c 'fisher install jhillyerd/plugin-git'
