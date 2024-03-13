@@ -1,5 +1,5 @@
 #!/usr/bin/env fish
-git pull origin main
+git pull origin osx
 if type -q brew
     brew update
 else
