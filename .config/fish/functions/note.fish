@@ -1,11 +1,8 @@
 function note
-    argparse --name=note 'f/file' 'd/date' -- $argv
-    or return
+    if ! set -q notes_path
+        set notes_path ~/projects/notes/
+    end
 
-    set -q $_flag_file; or set _flag_file (date +%F).md
-    set -q _flag_date; or set _flag_date (date +%c)
-    set -q path; or set path ~/projects/notes/journal
-
-    cp -n $path/template $path/$_flag_file
-    sed -i '' "s/{date}/$_flag_date/" $path/$_flag_file
+    cp $notes_path/journal/template $notes_path/journal/(date +%F).md
+    sed -i '' "s/{date}/"(date +%c)"/" $notes_path/journal/(date +%F).md
 end
